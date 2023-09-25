@@ -8,6 +8,8 @@ This is a simple web app for restaurant. It have a minimal features that work as
 First, run the development server:
 
 ```bash
+npm install
+then
 npm run dev
 # or
 yarn dev
