@@ -23,13 +23,13 @@ const OrderPage: React.FC = () => {
         amount: selectedAmount,
       };
 
-      // Save the order
+      // Simpan pesanan
       saveOrder(newOrder);
 
-      // Update the orders state
+      // Update state dari pesanan
       setOrders([...orders, newOrder]);
 
-      // Reset selection
+      // Reset pilihan
       setSelectedTable('');
       setSelectedMenu('');
       setSelectedAmount(1);

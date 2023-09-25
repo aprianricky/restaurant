@@ -1,27 +1,27 @@
 "use client";
 import React, { useState } from 'react';
-import { getOrders, Order } from '../../utils/menuData'; // Import the function to get orders
+import { getOrders, Order } from '../../utils/menuData';
 
 interface DapurPageProps {}
 
 const DapurPage: React.FC<DapurPageProps> = () => {
-  const [orders, setOrders] = useState<Order[]>(getOrders()); // Use useState to manage orders state
-  const [selectedTable, setSelectedTable] = useState<string>(''); // Track selected table
+  const [orders, setOrders] = useState<Order[]>(getOrders()); 
+  const [selectedTable, setSelectedTable] = useState<string>(''); // Track tabel terpilih
 
-  // Extract the unique table names from the orders
+  
   const tableNames: string[] = Array.from(new Set(orders.map((order) => order.table)));
 
   const handleDeleteData = () => {
     if (selectedTable) {
-      // Show a browser-native confirmation dialog
+      // Fungsi untuk dialog konfirmasi dari browser-native
       const confirmed = window.confirm('Hapus Pesanan?');
 
       if (confirmed) {
-        // Delete all data records for the selected table (both menu and orders)
+        // Hapus semua record data untuk tabel terpilih (menu dan order)
         const updatedOrders = orders.filter((order) => order.table !== selectedTable);
         localStorage.setItem('orderData', JSON.stringify(updatedOrders));
 
-        // Reset the selected table and orders state
+        // Reset tabel terpilih dan state dari order
         setSelectedTable('');
         setOrders(updatedOrders);
       }
@@ -40,7 +40,7 @@ const DapurPage: React.FC<DapurPageProps> = () => {
               className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-2 ${
                 selectedTable === tableName ? 'cursor-pointer' : ''
               }`}
-              onClick={() => setSelectedTable(tableName)} // Set the selected table on click
+              onClick={() => setSelectedTable(tableName)} 
             >
               <div
                 className={`bg-white rounded-lg shadow-lg p-4 ${
