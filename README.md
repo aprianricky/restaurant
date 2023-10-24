@@ -1,7 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Details
-Ambisius Lab Coding Challenge - Ricky Aprian
 This is a simple web app for restaurant. It have a minimal features that work as a basic system for restaurant.
 
 
